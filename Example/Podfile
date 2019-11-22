@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SRActivityIndicator_Example' do
+  pod 'SRActivityIndicator', :path => '../'
+
+  target 'SRActivityIndicator_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
