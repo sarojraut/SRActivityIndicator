@@ -1,0 +1,22 @@
+{
+  "name": "SRActivityIndicator",
+  "version": "0.1.0",
+  "summary": "A short description of SRActivityIndicator.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/sarojraut/SRActivityIndicator",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "sarojraut": "sarojraut09@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/sarojraut/SRActivityIndicator.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SRActivityIndicator/Classes/**/*"
+}

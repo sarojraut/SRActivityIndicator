@@ -1,0 +1,16 @@
+PODS:
+  - SRActivityIndicator (0.1.0)
+
+DEPENDENCIES:
+  - SRActivityIndicator (from `../`)
+
+EXTERNAL SOURCES:
+  SRActivityIndicator:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SRActivityIndicator: 505df1ea0bfa58d6073d0a2358ebec561666fce7
+
+PODFILE CHECKSUM: 9f0e7aaa9b1c0ab722d2018caea44cf662e69fae
+
+COCOAPODS: 1.7.5

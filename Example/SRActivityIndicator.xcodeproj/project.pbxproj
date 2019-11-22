@@ -28,8 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2F950CD0ED28C7FD16CC6867 /* SRActivityIndicator.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = SRActivityIndicator.podspec; path = ../SRActivityIndicator.podspec; sourceTree = "<group>"; };
-		45581BD8E161A5F2D5C07BDD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		2F950CD0ED28C7FD16CC6867 /* SRActivityIndicator.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SRActivityIndicator.podspec; path = ../SRActivityIndicator.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		45581BD8E161A5F2D5C07BDD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		4EBF43D82D1F8E62CD77A053 /* Pods_SRActivityIndicator_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SRActivityIndicator_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A2B192E8DF8AC45500C00B3 /* Pods-SRActivityIndicator_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SRActivityIndicator_Tests.debug.xcconfig"; path = "Target Support Files/Pods-SRActivityIndicator_Tests/Pods-SRActivityIndicator_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SRActivityIndicator_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SRActivityIndicator_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,7 +42,7 @@
 		607FACE51AFB9204008FA782 /* SRActivityIndicator_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SRActivityIndicator_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		898E59FE70401341FA5E1FB2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		898E59FE70401341FA5E1FB2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		96BC7590CBF0422BC3D4817B /* Pods-SRActivityIndicator_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SRActivityIndicator_Tests.release.xcconfig"; path = "Target Support Files/Pods-SRActivityIndicator_Tests/Pods-SRActivityIndicator_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A82878333BEE887A90A8C266 /* Pods-SRActivityIndicator_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SRActivityIndicator_Example.release.xcconfig"; path = "Target Support Files/Pods-SRActivityIndicator_Example/Pods-SRActivityIndicator_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C455BC93566EEA8E49991153 /* Pods-SRActivityIndicator_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SRActivityIndicator_Example.debug.xcconfig"; path = "Target Support Files/Pods-SRActivityIndicator_Example/Pods-SRActivityIndicator_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,7 +156,6 @@
 				5A2B192E8DF8AC45500C00B3 /* Pods-SRActivityIndicator_Tests.debug.xcconfig */,
 				96BC7590CBF0422BC3D4817B /* Pods-SRActivityIndicator_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -227,6 +226,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
