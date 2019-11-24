@@ -58,7 +58,7 @@ public class SRActivityIndicator: UIView {
         outerLayer.lineWidth = outerLineWidth
         outerLayer.strokeStart = 0.0
         outerLayer.strokeEnd = outerEndStroke
-        outerLayer.lineCap = CAShapeLayerLineCap.round
+        //outerLayer.lineCap =  CAShapeLayerLineCap(rawValue: "round") as String
         outerLayer.fillColor = outerFillColor.cgColor
         outerLayer.strokeColor = outerStrokeColor.cgColor
         outerView.layer.addSublayer(outerLayer)
@@ -81,7 +81,7 @@ public class SRActivityIndicator: UIView {
             innerLayer.lineWidth = innerLineWidth
             innerLayer.strokeStart = 0
             innerLayer.strokeEnd = innerEndStroke
-            innerLayer.lineCap = CAShapeLayerLineCap.round
+            //innerLayer.lineCap = CAShapeLayerLineCap.round
             innerLayer.fillColor = innerFillColor.cgColor
             innerLayer.strokeColor = innerStrokeColor.cgColor
             

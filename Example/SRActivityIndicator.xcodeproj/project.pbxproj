@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		4B5ED952B240E438032E91CC /* Pods_SRActivityIndicator_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EBF43D82D1F8E62CD77A053 /* Pods_SRActivityIndicator_Example.framework */; };
+		5060485A238AB27F00846BC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50604859238AB27F00846BC8 /* Main.storyboard */; };
 		50FD389623882F0D00592B43 /* SRActivityIndicator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50FD388D23882F0D00592B43 /* SRActivityIndicator.framework */; };
 		50FD389D23882F0D00592B43 /* SRActivityIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FD389C23882F0D00592B43 /* SRActivityIndicatorTests.swift */; };
 		50FD38A223882F0D00592B43 /* SRActivityIndicator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50FD388D23882F0D00592B43 /* SRActivityIndicator.framework */; };
 		50FD38A323882F0D00592B43 /* SRActivityIndicator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50FD388D23882F0D00592B43 /* SRActivityIndicator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		50FD39F0238AB1D000592B43 /* SRActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FD39EF238AB1D000592B43 /* SRActivityIndicator.swift */; };
+		50FD39F2238AB21700592B43 /* globe.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50FD39F1238AB21700592B43 /* globe.jpg */; };
+		50FD39F4238AB21E00592B43 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50FD39F3238AB21E00592B43 /* image.jpg */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
-		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
@@ -70,16 +73,18 @@
 		2F950CD0ED28C7FD16CC6867 /* SRActivityIndicator.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SRActivityIndicator.podspec; path = ../SRActivityIndicator.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		45581BD8E161A5F2D5C07BDD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		4EBF43D82D1F8E62CD77A053 /* Pods_SRActivityIndicator_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SRActivityIndicator_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50604859238AB27F00846BC8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		50FD388D23882F0D00592B43 /* SRActivityIndicator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SRActivityIndicator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50FD389523882F0D00592B43 /* SRActivityIndicatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SRActivityIndicatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50FD389C23882F0D00592B43 /* SRActivityIndicatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRActivityIndicatorTests.swift; sourceTree = "<group>"; };
 		50FD389E23882F0D00592B43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50FD39EF238AB1D000592B43 /* SRActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRActivityIndicator.swift; path = ../../SRActivityIndicator.swift; sourceTree = "<group>"; };
+		50FD39F1238AB21700592B43 /* globe.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = globe.jpg; sourceTree = "<group>"; };
+		50FD39F3238AB21E00592B43 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
 		5A2B192E8DF8AC45500C00B3 /* Pods-SRActivityIndicator_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SRActivityIndicator_Tests.debug.xcconfig"; path = "Target Support Files/Pods-SRActivityIndicator_Tests/Pods-SRActivityIndicator_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SRActivityIndicator_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SRActivityIndicator_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* SRActivityIndicator_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SRActivityIndicator_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,9 +178,12 @@
 		607FACD21AFB9204008FA782 /* Example for SRActivityIndicator */ = {
 			isa = PBXGroup;
 			children = (
+				50FD39F1238AB21700592B43 /* globe.jpg */,
+				50FD39F3238AB21E00592B43 /* image.jpg */,
+				50FD39EF238AB1D000592B43 /* SRActivityIndicator.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				50604859238AB27F00846BC8 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -187,7 +195,6 @@
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD41AFB9204008FA782 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -342,6 +349,7 @@
 					};
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 46FE8LX528;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -392,9 +400,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				50FD39F2238AB21700592B43 /* globe.jpg in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				5060485A238AB27F00846BC8 /* Main.storyboard in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				50FD39F4238AB21E00592B43 /* image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +484,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50FD39F0238AB1D000592B43 /* SRActivityIndicator.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
@@ -513,14 +524,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDA1AFB9204008FA782 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -763,7 +766,9 @@
 			baseConfigurationReference = C455BC93566EEA8E49991153 /* Pods-SRActivityIndicator_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 46FE8LX528;
 				INFOPLIST_FILE = SRActivityIndicator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -778,7 +783,9 @@
 			baseConfigurationReference = A82878333BEE887A90A8C266 /* Pods-SRActivityIndicator_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 46FE8LX528;
 				INFOPLIST_FILE = SRActivityIndicator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
