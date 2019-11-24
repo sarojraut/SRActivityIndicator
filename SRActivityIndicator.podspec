@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
                        DESC
 
   s.homepage         = 'https://github.com/sarojraut/SRActivityIndicator'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+   s.screenshots     = 'https://github.com/sarojraut/SRActivityIndicator/blob/master/ezgif.com-video-to-gif.gif'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'sarojraut' => 'sarojraut09@gmail.com' }
   s.source           = { :git => 'https://github.com/sarojraut/SRActivityIndicator.git', :tag => s.version.to_s }
