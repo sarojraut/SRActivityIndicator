@@ -10,7 +10,7 @@ import UIKit
 
 public class SRActivityIndicator: UIView {
     
-    public var hidesWhenStopped : Bool = false
+    public var hidesWhenStopped : Bool = true
     public var outerFillColor : UIColor = UIColor.clear
     public var outerStrokeColor : UIColor = UIColor.gray
     public var outerLineWidth : CGFloat = 5.0
@@ -44,6 +44,7 @@ public class SRActivityIndicator: UIView {
     }
     
     func commonInit(){
+        self.frame =  CGRect(x: 0, y: 0, width: centerImageSize + 25, height: centerImageSize + 25)
         self.backgroundColor = UIColor.clear
     }
     
@@ -100,18 +101,50 @@ public class SRActivityIndicator: UIView {
         self.innerView.layer.add(rotationAnimation, forKey: "rotateInner")
     }
     
+    
   public  func startAnimating(){
         
         self.isHidden = false
         self.animateInnerRing()
     }
     
+    
+    public func show(){
+        self.isHidden = false
+        let delegate = UIApplication.shared.delegate
+        self.center = (delegate!.window!?.rootViewController?.view.center)!
+        delegate!.window!?.rootViewController?.view.addSubview(self)
+        self.animateInnerRing()
+    }
+    
+    public func dissmiss(){
+         if hidesWhenStopped{
+            UIView.animate(withDuration: 0.3, animations: {
+                self.alpha = 0
+            }, completion: { (true) in
+                self.isHidden = true
+                self.outerView.layer.removeAllAnimations()
+                self.innerView.layer.removeAllAnimations()
+            })
+           }
+         
+    }
+    
   public  func stopAnimating(){
         if hidesWhenStopped{
-            self.isHidden = true
+            UIView.animate(withDuration: 0.3, animations: {
+                           self.alpha = 0
+                       }, completion: { (true) in
+                           self.isHidden = true
+                        self.outerView.layer.removeAllAnimations()
+                        self.innerView.layer.removeAllAnimations()
+                       })
         }
-        self.outerView.layer.removeAllAnimations()
-        self.innerView.layer.removeAllAnimations()
+       
         
     }
 }
+
+
+
+
