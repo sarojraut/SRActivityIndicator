@@ -17,8 +17,7 @@ class ViewController: UIViewController {
                activityIndicator.innerStrokeColor = UIColor.white
                activityIndicator.outerStrokeColor = UIColor.clear
                activityIndicator.centerImage = UIImage(named: "globe.jpg")!
-               self.activityIndicator.hidesWhenStopped = true
-               activityIndicator.startAnimating()
+               activityIndicator.show()
         }
         
        
