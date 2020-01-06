@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-  @IBOutlet weak var activityIndicator: SRActivityIndicator!
+  var activityIndicator =  SRActivityIndicator()
            
            override func viewDidLoad() {
                super.viewDidLoad()
