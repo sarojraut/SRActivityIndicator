@@ -123,10 +123,11 @@ public class SRActivityIndicator: UIView {
                 self.alpha = 0
             }, completion: { (true) in
                 self.isHidden = true
+                self.outerView.layer.removeAllAnimations()
+                self.innerView.layer.removeAllAnimations()
             })
            }
-           self.outerView.layer.removeAllAnimations()
-           self.innerView.layer.removeAllAnimations()
+         
     }
     
   public  func stopAnimating(){
@@ -135,10 +136,11 @@ public class SRActivityIndicator: UIView {
                            self.alpha = 0
                        }, completion: { (true) in
                            self.isHidden = true
+                        self.outerView.layer.removeAllAnimations()
+                        self.innerView.layer.removeAllAnimations()
                        })
         }
-        self.outerView.layer.removeAllAnimations()
-        self.innerView.layer.removeAllAnimations()
+       
         
     }
 }

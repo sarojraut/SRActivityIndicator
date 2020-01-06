@@ -53,7 +53,7 @@ class ViewController: UIViewController {
         
         
         @IBAction func stopAnimating(_ sender: Any) {
-            self.activityIndicator.stopAnimating()
+            self.activityIndicator.dissmiss()
         }
         
 
