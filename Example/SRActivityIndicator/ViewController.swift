@@ -10,15 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
-  @IBOutlet weak var activityIndicator: SRActivityIndicator!
+   var activityIndicator = SRActivityIndicator()
            
            override func viewDidLoad() {
                super.viewDidLoad()
                activityIndicator.innerStrokeColor = UIColor.white
                activityIndicator.outerStrokeColor = UIColor.clear
                activityIndicator.centerImage = UIImage(named: "globe.jpg")!
-               self.activityIndicator.hidesWhenStopped = true
-               activityIndicator.startAnimating()
+               activityIndicator.show()
         }
         
        
