@@ -8,30 +8,47 @@
 
 import UIKit
 
+@IBDesignable
 public class SRActivityIndicator: UIView {
     
+    @IBInspectable
     public var hidesWhenStopped : Bool = true
+    @IBInspectable
     public var outerFillColor : UIColor = UIColor.clear
-    public var outerStrokeColor : UIColor = UIColor.gray
+    @IBInspectable
+    public var outerStrokeColor : UIColor = UIColor.clear
+    @IBInspectable
     public var outerLineWidth : CGFloat = 5.0
+    @IBInspectable
     public var outerEndStroke : CGFloat = 1.0
+    @IBInspectable
     public var outerAnimationDuration : CGFloat = 2.0
+    @IBInspectable
     public var enableInnerLayer : Bool = true
+    @IBInspectable
     public var innerFillColor : UIColor  = UIColor.clear
+    @IBInspectable
     public var innerStrokeColor : UIColor = UIColor(red: 208/255, green: 154/255, blue: 35/255, alpha: 1)
+    @IBInspectable
     public var centerImageSize: CGFloat = 50
+    @IBInspectable
     public var centerImage: UIImage? = UIImage(named: "image")
+    @IBInspectable
     public var innerLineWidth : CGFloat = 5.0
+    @IBInspectable
     public var innerEndStroke : CGFloat = 0.5
+    @IBInspectable
     public var innerAnimationDuration : CGFloat = 1.0
+    @IBInspectable
+    public var currentInnerRotation : CGFloat = 0
+    @IBInspectable
+    public var currentOuterRotation : CGFloat = 0
     
-   public var currentInnerRotation : CGFloat = 0
-   public var currentOuterRotation : CGFloat = 0
+    public var innerView : UIView = UIView()
+    public var outerView : UIView = UIView()
+    public var centerView : UIImageView = UIImageView()
     
-   public var innerView : UIView = UIView()
-   public var outerView : UIView = UIView()
-   public var centerView : UIImageView = UIImageView()
-    
+    //MARK:- init
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.commonInit()
@@ -39,15 +56,15 @@ public class SRActivityIndicator: UIView {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        
         self.commonInit()
     }
     
-    func commonInit(){
+    private func commonInit(){
         self.frame =  CGRect(x: 0, y: 0, width: centerImageSize + 25, height: centerImageSize + 25)
         self.backgroundColor = UIColor.clear
     }
     
+    //MARK:- draw
     override public func draw(_ rect: CGRect) {
         
         self.addSubview(outerView)
@@ -71,7 +88,6 @@ public class SRActivityIndicator: UIView {
         centerView.center = self.convert(self.center, from: self.superview!)
         centerView.image = centerImage
         
-        
         if enableInnerLayer{
             
             self.addSubview(innerView)
@@ -91,8 +107,10 @@ public class SRActivityIndicator: UIView {
         self.startAnimating()
     }
     
-   public func animateInnerRing(){
-        
+    //MARK:- Public
+    
+    public func animateInnerRing(){
+        innerView.layer.removeAllAnimations()
         let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
         rotationAnimation.fromValue = 0 * CGFloat(Double.pi/180)
         rotationAnimation.toValue = 360 * CGFloat(Double.pi/180)
@@ -102,14 +120,12 @@ public class SRActivityIndicator: UIView {
     }
     
     
-  public  func startAnimating(){
-        
+    public  func startAnimating(){
         self.isHidden = false
         self.animateInnerRing()
     }
     
-    
-    public func show(){
+    public func show() -> SRActivityIndicator {
         self.isHidden = false
         UIView.animate(withDuration: 0.3, animations: {
             self.alpha = 1
@@ -119,35 +135,28 @@ public class SRActivityIndicator: UIView {
             delegate!.window!?.rootViewController?.view.addSubview(self)
             self.animateInnerRing()
         })
-        
-        
+
+        return self
     }
     
     public func dissmiss(){
-         if hidesWhenStopped{
-            UIView.animate(withDuration: 0.3, animations: {
-                self.alpha = 0
-            }, completion: { (true) in
-                self.isHidden = true
-                self.outerView.layer.removeAllAnimations()
-                self.innerView.layer.removeAllAnimations()
-            })
-           }
-         
-    }
-    
-  public  func stopAnimating(){
         if hidesWhenStopped{
-            UIView.animate(withDuration: 0.3, animations: {
-                           self.alpha = 0
-                       }, completion: { (true) in
-                           self.isHidden = true
-                        self.outerView.layer.removeAllAnimations()
-                        self.innerView.layer.removeAllAnimations()
-                       })
+            hide()
+        }else{
+            self.outerView.layer.removeAllAnimations()
+            self.innerView.layer.removeAllAnimations()
         }
-       
-        
+    }
+
+    //MARK:- private
+    private func hide() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.alpha = 0
+        }, completion: { (true) in
+            self.isHidden = true
+            self.outerView.layer.removeAllAnimations()
+            self.innerView.layer.removeAllAnimations()
+        })
     }
 }
 

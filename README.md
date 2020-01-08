@@ -42,10 +42,13 @@ import SRActivityIndicator
 
 class ClassThatUseThisLibrary: UIViewController {
 
-@IBOutlet weak var activityIndicator: SRActivityIndicator!
+          //Declare 
+          @IBOutlet weak var activityIndicator: SRActivityIndicator!
           
           override func viewDidLoad() {
               super.viewDidLoad()
+              
+              //configure
               activityIndicator.innerStrokeColor = UIColor.white
               activityIndicator.outerStrokeColor = UIColor.clear
               activityIndicator.centerImage = UIImage(named: "globe.jpg")!
