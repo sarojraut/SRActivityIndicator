@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,13 +36,29 @@
                                     <action selector="stopAnimating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="akS-JU-iWa"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xNi-tN-UYu" customClass="SRActivityIndicator" customModule="SRActivityIndicator_Example" customModuleProvider="target">
+                                <rect key="frame" x="172.5" y="604" width="69" height="69"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="xNi-tN-UYu" secondAttribute="height" id="vEk-4c-UJ4"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hidesWhenStopped" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="outerLineWidth">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.036108106047939341" green="0.034673139659962007" blue="0.61921002538071068" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="tJY-3L-Lde" firstAttribute="centerX" secondItem="86D-G0-AbG" secondAttribute="centerX" id="G7N-1b-FMj"/>
+                            <constraint firstItem="xNi-tN-UYu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Srh-pP-5R3"/>
                             <constraint firstItem="86D-G0-AbG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Swi-LZ-exT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tJY-3L-Lde" secondAttribute="bottom" constant="50" id="Vq0-9z-gMz"/>
                             <constraint firstItem="tJY-3L-Lde" firstAttribute="top" secondItem="86D-G0-AbG" secondAttribute="bottom" constant="17" id="Zzi-tg-w4X"/>
+                            <constraint firstItem="xNi-tN-UYu" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:6" id="lUY-XX-0te"/>
+                            <constraint firstItem="86D-G0-AbG" firstAttribute="top" secondItem="xNi-tN-UYu" secondAttribute="bottom" constant="62" id="pCx-O4-Lj4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
