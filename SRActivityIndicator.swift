@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable
 public class SRActivityIndicator: UIView {
     
-    @IBInspectable
+    @IBInspectabledsfsdf
     public var hidesWhenStopped : Bool = true
     @IBInspectable
     public var outerFillColor : UIColor = UIColor.clear
