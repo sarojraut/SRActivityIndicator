@@ -18,6 +18,7 @@ class ViewController: UIViewController {
                activityIndicator.outerStrokeColor = UIColor.clear
                activityIndicator.centerImage = UIImage(named: "globe.jpg")!
                activityIndicator.show()
+
         }
         
        
@@ -45,6 +46,16 @@ class ViewController: UIViewController {
                 self.activityIndicator.draw(self.activityIndicator.frame)
 
             }))
+            
+            alert.addAction(UIAlertAction(title: "Show", style: .default, handler:{ (UIAlertAction)in
+                self.activityIndicator.show()
+
+                       }))
+            
+            alert.addAction(UIAlertAction(title: "Dissmiss", style: .default, handler:{ (UIAlertAction)in
+                           self.activityIndicator.dissmiss()
+
+                                  }))
 
             self.present(alert, animated: true, completion: {
                 print("completion block")

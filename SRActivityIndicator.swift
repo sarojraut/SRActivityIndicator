@@ -111,10 +111,16 @@ public class SRActivityIndicator: UIView {
     
     public func show(){
         self.isHidden = false
-        let delegate = UIApplication.shared.delegate
-        self.center = (delegate!.window!?.rootViewController?.view.center)!
-        delegate!.window!?.rootViewController?.view.addSubview(self)
-        self.animateInnerRing()
+        UIView.animate(withDuration: 0.3, animations: {
+            self.alpha = 1
+        }, completion: { (true) in
+            let delegate = UIApplication.shared.delegate
+            self.center = (delegate!.window!?.rootViewController?.view.center)!
+            delegate!.window!?.rootViewController?.view.addSubview(self)
+            self.animateInnerRing()
+        })
+        
+        
     }
     
     public func dissmiss(){

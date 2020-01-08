@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SRActivityIndicator'
-  s.version          = '0.1.0'
+  s.version          = '0.1.2'
   s.summary          = 'Alternative to activity indicator'
 
 # This description is used to generate tags and improve search results.
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
                        DESC
 
   s.homepage         = 'https://github.com/sarojraut/SRActivityIndicator'
-   s.screenshots     = 'https://github.com/sarojraut/SRActivityIndicator/blob/master/ezgif.com-video-to-gif.gif'
+   s.screenshots     = 'https://raw.githubusercontent.com/sarojraut/SRActivityIndicator/master/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20Max%20-%202019-11-24%20at%2017.35.51.png'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'sarojraut' => 'sarojraut09@gmail.com' }
   s.source           = { :git => 'https://github.com/sarojraut/SRActivityIndicator.git', :tag => s.version.to_s }
