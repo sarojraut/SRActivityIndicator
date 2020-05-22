@@ -8,7 +8,6 @@
 
 import UIKit
 
-@IBDesignable
 public class SRActivityIndicator: UIView {
     let contentView = UIView()
     
