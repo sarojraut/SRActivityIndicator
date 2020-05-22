@@ -10,44 +10,28 @@ import UIKit
 
 @IBDesignable
 public class SRActivityIndicator: UIView {
+    let contentView = UIView()
     
-    @IBInspectable
-    public var hidesWhenStopped : Bool = true
-    @IBInspectable
     public var outerFillColor : UIColor = UIColor.clear
-    @IBInspectable
     public var outerStrokeColor : UIColor = UIColor.clear
-    @IBInspectable
     public var outerLineWidth : CGFloat = 5.0
-    @IBInspectable
     public var outerEndStroke : CGFloat = 1.0
-    @IBInspectable
     public var outerAnimationDuration : CGFloat = 2.0
-    @IBInspectable
     public var enableInnerLayer : Bool = true
-    @IBInspectable
     public var innerFillColor : UIColor  = UIColor.clear
-    @IBInspectable
     public var innerStrokeColor : UIColor = UIColor(red: 208/255, green: 154/255, blue: 35/255, alpha: 1)
-    @IBInspectable
     public var centerImageSize: CGFloat = 50
-    @IBInspectable
     public var centerImage: UIImage? = UIImage(named: "image")
-    @IBInspectable
     public var innerLineWidth : CGFloat = 5.0
-    @IBInspectable
     public var innerEndStroke : CGFloat = 0.5
-    @IBInspectable
     public var innerAnimationDuration : CGFloat = 1.0
-    @IBInspectable
     public var currentInnerRotation : CGFloat = 0
-    @IBInspectable
     public var currentOuterRotation : CGFloat = 0
-    
+    public var masking = true
     public var innerView : UIView = UIView()
     public var outerView : UIView = UIView()
     public var centerView : UIImageView = UIImageView()
-    
+    public var disableUserInteraction = true
     //MARK:- init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -60,39 +44,45 @@ public class SRActivityIndicator: UIView {
     }
     
     private func commonInit(){
-        self.frame =  CGRect(x: 0, y: 0, width: centerImageSize + 25, height: centerImageSize + 25)
-        self.backgroundColor = UIColor.clear
+         self.frame = UIScreen.main.bounds
+        if self.masking{
+            self.backgroundColor = #colorLiteral(red: 0.02204096503, green: 0.02204096503, blue: 0.02204096503, alpha: 0.6335081336)
+        }else{
+            self.backgroundColor = UIColor.clear
+        }
+        if !disableUserInteraction{
+            self.isUserInteractionEnabled = false
+        }
+         contentView.frame = CGRect(x: 0, y: 0, width: 25+centerImageSize, height: 25+centerImageSize)
+         self.addSubview(contentView)
+         contentView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+         contentView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
     }
     
     //MARK:- draw
     override public func draw(_ rect: CGRect) {
-        
-        self.addSubview(outerView)
-        outerView.frame = CGRect(x: 0 , y: 0, width: rect.size.width, height: rect.size.height)
-        outerView.center = self.convert(self.center, from: self.superview!)
-        
+        self.contentView.addSubview(outerView)
+        outerView.frame = CGRect(x: 0 , y: 0, width: contentView.frame.size.width, height: contentView.frame.size.height)
+        outerView.center = self.convert(self.center, from: self.contentView)
         let outerLayer = CAShapeLayer()
         outerLayer.path = UIBezierPath(ovalIn: outerView.bounds).cgPath
         outerLayer.lineWidth = outerLineWidth
         outerLayer.strokeStart = 0.0
         outerLayer.strokeEnd = outerEndStroke
-        //outerLayer.lineCap =  CAShapeLayerLineCap(rawValue: "round") as String
         outerLayer.fillColor = outerFillColor.cgColor
         outerLayer.strokeColor = outerStrokeColor.cgColor
         outerView.layer.addSublayer(outerLayer)
-        
-        self.addSubview(centerView)
+        self.contentView.addSubview(centerView)
         centerView.frame = CGRect(x: 0, y: 0, width: centerImageSize, height: centerImageSize)
         centerView.layer.cornerRadius = centerView.frame.width / 2
         centerView.clipsToBounds = true
-        centerView.center = self.convert(self.center, from: self.superview!)
+        centerView.center = self.convert(self.center, from: self.contentView)
         centerView.image = centerImage
         
         if enableInnerLayer{
-            
-            self.addSubview(innerView)
-            innerView.frame = CGRect(x: 0 , y: 0, width: rect.size.width , height: rect.size.height)
-            innerView.center =  self.convert(self.center, from: self.superview!)
+            self.contentView.addSubview(innerView)
+            innerView.frame = CGRect(x: 0 , y: 0, width: contentView.frame.size.width , height: contentView.frame.size.height)
+            innerView.center =  self.convert(self.center, from: self.contentView)
             let innerLayer = CAShapeLayer()
             innerLayer.path = UIBezierPath(ovalIn: innerView.bounds).cgPath
             innerLayer.lineWidth = innerLineWidth
@@ -101,14 +91,12 @@ public class SRActivityIndicator: UIView {
             //innerLayer.lineCap = CAShapeLayerLineCap.round
             innerLayer.fillColor = innerFillColor.cgColor
             innerLayer.strokeColor = innerStrokeColor.cgColor
-            
             innerView.layer.addSublayer(innerLayer)
         }
-        self.startAnimating()
+       
     }
     
     //MARK:- Public
-    
     public func animateInnerRing(){
         innerView.layer.removeAllAnimations()
         let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
@@ -119,47 +107,32 @@ public class SRActivityIndicator: UIView {
         self.innerView.layer.add(rotationAnimation, forKey: "rotateInner")
     }
     
-    
     public  func startAnimating(){
-        self.isHidden = false
         self.animateInnerRing()
     }
     
-    public func show() -> SRActivityIndicator {
-        self.isHidden = false
-        UIView.animate(withDuration: 0.3, animations: {
+    public func show() {
+        self.removeFromSuperview()
+        let appDelegate = UIApplication.shared.delegate
+        appDelegate!.window??.addSubview(self)
+        self.alpha = 0
+        UIView.animate(withDuration: 0.5, animations: {
             self.alpha = 1
         }, completion: { (true) in
-            let delegate = UIApplication.shared.delegate
-            self.center = (delegate!.window!?.rootViewController?.view.center)!
-            delegate!.window!?.rootViewController?.view.addSubview(self)
-            self.animateInnerRing()
+               
+                self.animateInnerRing()
         })
-
-        return self
     }
     
     public func dissmiss(){
-        if hidesWhenStopped{
-            hide()
-        }else{
-            self.outerView.layer.removeAllAnimations()
-            self.innerView.layer.removeAllAnimations()
-        }
+       UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 1, options: .curveEaseOut, animations: {() -> Void in
+        self.alpha = 0
+       }, completion: { _ in
+           self.removeFromSuperview()
+       })
     }
-
-    //MARK:- private
-    private func hide() {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.alpha = 0
-        }, completion: { (true) in
-            self.isHidden = true
-            self.outerView.layer.removeAllAnimations()
-            self.innerView.layer.removeAllAnimations()
-        })
-    }
+    
 }
-
 
 
 
