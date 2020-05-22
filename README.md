@@ -38,23 +38,23 @@ github "sarojraut/SRActivityIndicator"
 
 ```swift
 import UIKit
-import SRActivityIndicator
 
-class ClassThatUseThisLibrary: UIViewController {
-
-          //Declare 
-          @IBOutlet weak var activityIndicator: SRActivityIndicator!
-          
-          override func viewDidLoad() {
-              super.viewDidLoad()
-              
-              //configure
-              activityIndicator.innerStrokeColor = UIColor.white
-              activityIndicator.outerStrokeColor = UIColor.clear
-              activityIndicator.centerImage = UIImage(named: "globe.jpg")!
-              self.activityIndicator.hidesWhenStopped = true
-              activityIndicator.startAnimating()
-       }
+class ViewController: UIViewController {
+    
+    var activityIndicator =  SRActivityIndicator()
+    
+     func showIndicator() {
+        activityIndicator.innerStrokeColor = UIColor.white
+        activityIndicator.outerStrokeColor = UIColor.red
+        activityIndicator.centerImageSize = 50 //imagesize define the size of indicator
+        activityIndicator.centerImage = UIImage(named: "globe.jpg")!
+        activityIndicator.show()
+    }
+    
+    func dissmiss(){
+         self.activityIndicator.dissmiss()
+    }
+    
 }
 
 ```
