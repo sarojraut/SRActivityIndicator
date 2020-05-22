@@ -28,9 +28,10 @@ class ViewController: UIViewController {
     @IBAction func showAlert(sender: AnyObject) {
         activityIndicator.innerStrokeColor = UIColor.white
         activityIndicator.outerStrokeColor = UIColor.red
+        activityIndicator.centerImageSize = 100
         activityIndicator.centerImage = UIImage(named: "globe.jpg")!
-       activityIndicator.show()
-       showAlert()
+        activityIndicator.show()
+        showAlert()
     }
     
     

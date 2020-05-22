@@ -60,6 +60,7 @@ public class SRActivityIndicator: UIView {
     
     //MARK:- draw
     override public func draw(_ rect: CGRect) {
+        contentView.frame = CGRect(x: 0, y: 0, width: 25+centerImageSize, height: 25+centerImageSize)
         self.contentView.addSubview(outerView)
         outerView.frame = CGRect(x: 0 , y: 0, width: contentView.frame.size.width, height: contentView.frame.size.height)
         outerView.center = self.convert(self.center, from: self.contentView)
