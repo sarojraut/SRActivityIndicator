@@ -13,7 +13,7 @@ public enum maskType {
     case Blur
 }
 
-let SRActivityIndicator = SR_ActivityIndicator()
+public let SRActivityIndicator = SR_ActivityIndicator()
 
 public class SR_ActivityIndicator: UIView {
     
