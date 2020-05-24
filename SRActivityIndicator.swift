@@ -11,8 +11,8 @@ import UIKit
 let SRActivityIndicator = SR_ActivityIndicator()
 
 public class SR_ActivityIndicator: UIView {
-    let contentView = UIView()
     
+    let contentView = UIView()
     public var outerFillColor : UIColor = UIColor.clear
     public var outerStrokeColor : UIColor = UIColor.clear
     public var outerLineWidth : CGFloat = 5.0
@@ -33,6 +33,7 @@ public class SR_ActivityIndicator: UIView {
     public var outerView : UIView = UIView()
     public var centerView : UIImageView = UIImageView()
     public var disableUserInteraction = true
+    
     //MARK:- init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -121,14 +122,13 @@ public class SR_ActivityIndicator: UIView {
         UIView.animate(withDuration: 0.5, animations: {
             self.alpha = 1
         }, completion: { (true) in
-               
-                self.animateInnerRing()
+            self.animateInnerRing()
         })
     }
     
     public func dissmiss(){
        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 1, options: .curveEaseOut, animations: {() -> Void in
-        self.alpha = 0
+            self.alpha = 0
        }, completion: { _ in
            self.removeFromSuperview()
        })
