@@ -27,6 +27,7 @@ class ViewController: UIViewController {
         SRActivityIndicator.outerStrokeColor = UIColor.red
         SRActivityIndicator.centerImageSize = 50
         SRActivityIndicator.centerImage = UIImage(named: "globe.jpg")!
+        SRActivityIndicator.setMaskingWith(maskType:.Blur,alpha: 0.5)
         SRActivityIndicator.show()
         showAlert()
     }

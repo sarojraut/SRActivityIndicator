@@ -8,6 +8,11 @@
 
 import UIKit
 
+public enum maskType {
+    case Dim
+    case Blur
+}
+
 let SRActivityIndicator = SR_ActivityIndicator()
 
 public class SR_ActivityIndicator: UIView {
@@ -28,12 +33,13 @@ public class SR_ActivityIndicator: UIView {
     public var innerAnimationDuration : CGFloat = 1.0
     public var currentInnerRotation : CGFloat = 0
     public var currentOuterRotation : CGFloat = 0
-    public var masking = true
+    public var masking:maskType = .Dim
     public var innerView : UIView = UIView()
     public var outerView : UIView = UIView()
     public var centerView : UIImageView = UIImageView()
     public var disableUserInteraction = true
-    
+    let vibrancyEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffect.Style.dark))
+
     //MARK:- init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,14 +51,24 @@ public class SR_ActivityIndicator: UIView {
         self.commonInit()
     }
     
+    public func setMaskingWith(maskType:maskType? = .Dim, alpha:CGFloat? = 1){
+        switch maskType {
+        case .Dim:
+            self.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: alpha!)
+        case .Blur:
+            vibrancyEffectView.frame = self.bounds
+            vibrancyEffectView.alpha = alpha!
+            vibrancyEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            self.insertSubview(vibrancyEffectView, belowSubview: self.contentView)
+        case .none:
+            break
+        }
+    }
+    
+    
     private func commonInit(){
          self.frame = UIScreen.main.bounds
-        if self.masking{
-            self.backgroundColor = #colorLiteral(red: 0.02204096503, green: 0.02204096503, blue: 0.02204096503, alpha: 0.6335081336)
-        }else{
-            self.backgroundColor = UIColor.clear
-        }
-        if !disableUserInteraction{
+                if !disableUserInteraction{
             self.isUserInteractionEnabled = false
         }
          contentView.frame = CGRect(x: 0, y: 0, width: 25+centerImageSize, height: 25+centerImageSize)
@@ -115,23 +131,25 @@ public class SR_ActivityIndicator: UIView {
     }
     
     public func show() {
-        self.removeFromSuperview()
-        let appDelegate = UIApplication.shared.delegate
-        appDelegate!.window??.addSubview(self)
-        self.alpha = 0
-        UIView.animate(withDuration: 0.5, animations: {
-            self.alpha = 1
-        }, completion: { (true) in
-            self.animateInnerRing()
-        })
-    }
+        DispatchQueue.main.async {
+                   self.removeFromSuperview()
+                   let appDelegate = UIApplication.shared.delegate
+                   appDelegate!.window??.addSubview(self)
+                   self.alpha = 0
+            UIView.animate(withDuration: 0.3, animations: {
+                       self.alpha = 1
+                   }, completion: { (true) in
+                       self.animateInnerRing()
+                   })
+            }
+        }
     
     public func dissmiss(){
-       UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 1, options: .curveEaseOut, animations: {() -> Void in
+            UIView.animate(withDuration: 0.3,animations: {() -> Void in
             self.alpha = 0
        }, completion: { _ in
-           self.removeFromSuperview()
-       })
+              self.innerView.layer.removeAllAnimations()
+        })
     }
     
 }

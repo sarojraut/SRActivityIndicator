@@ -17,7 +17,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86D-G0-AbG">
-                                <rect key="frame" x="188" y="812" width="38" height="30"/>
+                                <rect key="frame" x="140.5" y="798" width="133" height="44"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="133" id="KCp-0m-X3V"/>
+                                    <constraint firstAttribute="height" constant="44" id="ieh-at-HCH"/>
+                                </constraints>
                                 <state key="normal" title="Show">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -25,11 +30,18 @@
                                     <action selector="showAlertWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QgG-AV-bqA"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="cq4-sc-Y8e">
+                                <rect key="frame" x="0.0" y="44" width="414" height="716"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.036108106047939341" green="0.034673139659962007" blue="0.61921002538071068" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="86D-G0-AbG" firstAttribute="top" secondItem="cq4-sc-Y8e" secondAttribute="bottom" constant="38" id="0Na-V1-YAq"/>
                             <constraint firstItem="86D-G0-AbG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Swi-LZ-exT"/>
+                            <constraint firstItem="cq4-sc-Y8e" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kbg-1x-PcI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="86D-G0-AbG" secondAttribute="bottom" constant="20" id="pYR-pC-VjH"/>
+                            <constraint firstItem="cq4-sc-Y8e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qCd-0E-gkz"/>
+                            <constraint firstItem="cq4-sc-Y8e" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wyp-0Z-Vtz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -39,4 +51,7 @@
             <point key="canvasLocation" x="-57.971014492753625" y="114.50892857142857"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="image.jpg" width="540" height="548"/>
+    </resources>
 </document>
