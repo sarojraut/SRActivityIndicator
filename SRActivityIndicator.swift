@@ -8,7 +8,9 @@
 
 import UIKit
 
-public class SRActivityIndicator: UIView {
+let SRActivityIndicator = SR_ActivityIndicator()
+
+public class SR_ActivityIndicator: UIView {
     let contentView = UIView()
     
     public var outerFillColor : UIColor = UIColor.clear

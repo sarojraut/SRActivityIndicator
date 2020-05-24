@@ -10,14 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
-    var activityIndicator =  SRActivityIndicator()
-    
      func showAlert() {
        let alert = UIAlertController(title: "Stop", message: "Please Select Stop", preferredStyle: .actionSheet)
 
               alert.addAction(UIAlertAction(title: "stop", style: .default, handler:{ (UIAlertAction)in
-                  self.activityIndicator.dissmiss()
+                  SRActivityIndicator.dissmiss()
               }))
 
               self.present(alert, animated: true, completion: {
@@ -26,11 +23,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showAlert(sender: AnyObject) {
-        activityIndicator.innerStrokeColor = UIColor.white
-        activityIndicator.outerStrokeColor = UIColor.red
-        activityIndicator.centerImageSize = 100
-        activityIndicator.centerImage = UIImage(named: "globe.jpg")!
-        activityIndicator.show()
+        SRActivityIndicator.innerStrokeColor = UIColor.white
+        SRActivityIndicator.outerStrokeColor = UIColor.red
+        SRActivityIndicator.centerImageSize = 50
+        SRActivityIndicator.centerImage = UIImage(named: "globe.jpg")!
+        SRActivityIndicator.show()
         showAlert()
     }
     
