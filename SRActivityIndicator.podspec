@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SRActivityIndicator'
-  s.version          = '2.0.2'
+  s.version          = '2.1.3'
   s.summary          = 'Alternative to activity indicator'
 
 # This description is used to generate tags and improve search results.
