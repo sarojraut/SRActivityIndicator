@@ -40,19 +40,17 @@ github "sarojraut/SRActivityIndicator"
 import UIKit
 
 class ViewController: UIViewController {
-    
-    var activityIndicator =  SRActivityIndicator()
-    
+        
      func showIndicator() {
-        activityIndicator.innerStrokeColor = UIColor.white
-        activityIndicator.outerStrokeColor = UIColor.red
-        activityIndicator.centerImageSize = 50 //imagesize define the size of indicator
-        activityIndicator.centerImage = UIImage(named: "globe.jpg")!
-        activityIndicator.show()
+        SRActivityIndicator.innerStrokeColor = UIColor.white
+        SRActivityIndicator.outerStrokeColor = UIColor.red
+        SRActivityIndicator.centerImageSize = 50 //imagesize define the size of indicator
+        SRActivityIndicator.centerImage = UIImage(named: "globe.jpg")!
+        SRActivityIndicator.show()
     }
     
     func dissmiss(){
-         self.activityIndicator.dissmiss()
+         SRActivityIndicator.dissmiss()
     }
     
 }
